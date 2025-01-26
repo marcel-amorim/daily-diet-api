@@ -3,7 +3,11 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "tsx watch src/server.ts",
+    "lint": "eslint src --ext .ts",
+    "knex": "node --no-warnings --import tsx ./node_modules/.bin/knex",
+    "test": "vitest",
+    "build": "tsup src"
   },
   "keywords": [],
   "author": "",
