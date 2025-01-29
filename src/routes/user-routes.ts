@@ -17,10 +17,11 @@ export async function userRoutes(app: FastifyInstance) {
     return { users }
   })
 
-  app.get('/:id', async (request, reply) => {
-    const { id } = idParamsSchema.parse(request.params)
-
-    const userDb = await knex('users').where({ id }).select('*').first()
+  app.get('/me', async (request, reply) => {
+    const userDb = await knex('users')
+      .where({ id: request.user?.id })
+      .select('*')
+      .first()
     if (!userDb) {
       return reply.code(404).send({ error: 'User not found' })
     }

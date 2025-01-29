@@ -6,6 +6,8 @@ export const userRegisterSchema = z.object({
   name: z.string(),
 })
 
+export type UserRegister = z.infer<typeof userRegisterSchema>
+
 export const userLoginSchema = z.object({
   email: z.string().email(),
   password: z.string().min(6),
