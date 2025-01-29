@@ -1,7 +1,6 @@
 import { FastifyInstance } from 'fastify'
 import { knex } from '../database'
 import { z } from 'zod'
-import { idParamsSchema } from '../models/shared'
 import { compareHash, createHash } from '../utils/crypto'
 import { userListSchema, userSchema } from '../models/user'
 import { generateAccessToken } from '../utils/token-service'

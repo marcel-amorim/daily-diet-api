@@ -11,5 +11,15 @@ declare module 'knex/types/tables' {
       created_at: Date
       updated_at: Date
     }
+    meals: {
+      id: string
+      name: string
+      description: string
+      date_time: string
+      is_planned: boolean
+      user_id: string
+      created_at: Date
+      updated_at: Date
+    }
   }
 }

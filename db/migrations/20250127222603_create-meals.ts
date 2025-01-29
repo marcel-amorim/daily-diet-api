@@ -6,8 +6,14 @@ export async function up(knex: Knex): Promise<void> {
     table.uuid('id').primary().defaultTo(knex.raw(uuidGeneration))
     table.string('name').notNullable()
     table.string('description').notNullable()
-    table.string('dateTime').notNullable()
+    table.timestamp('date_time').notNullable()
     table.boolean('is_planned').notNullable()
+    table
+      .uuid('user_id')
+      .references('id')
+      .inTable('users')
+      .onDelete('CASCADE')
+      .notNullable()
     table.timestamps(true, true)
   })
 }
