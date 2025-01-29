@@ -122,7 +122,7 @@ export async function mealsRoutes(app: FastifyInstance) {
     maxSequence = Math.max(maxSequence, sequence)
 
     return {
-      metric: { total: planned + unplanned, planned, unplanned, maxSequence },
+      metrics: { total: planned + unplanned, planned, unplanned, maxSequence },
     }
   })
 }

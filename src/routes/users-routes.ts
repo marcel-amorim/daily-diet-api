@@ -6,7 +6,7 @@ import { userListSchema, userSchema } from '../models/user'
 import { generateAccessToken } from '../utils/token-service'
 import { accessMiddleware } from '../middlewares/access-middleware'
 
-export async function userRoutes(app: FastifyInstance) {
+export async function usersRoutes(app: FastifyInstance) {
   app.addHook('preHandler', accessMiddleware)
 
   app.get('/', async () => {

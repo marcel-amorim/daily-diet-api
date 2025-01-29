@@ -1,9 +1,9 @@
 import fastify from 'fastify'
-import { loginRoute, registerRoute, userRoutes } from './routes/user-routes'
+import { loginRoute, registerRoute, usersRoutes } from './routes/users-routes'
 import { mealsRoutes } from './routes/meals-routes'
 
 export const app = fastify()
-app.register(userRoutes, {
+app.register(usersRoutes, {
   prefix: 'users',
 })
 app.register(registerRoute, {

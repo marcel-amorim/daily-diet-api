@@ -3,7 +3,7 @@ import request from 'supertest'
 import { app } from '../app'
 import { UserRegister } from '../models/user'
 
-describe('User routes', () => {
+describe('Users routes', () => {
   const user: UserRegister = {
     email: 'marcel@amorim.live',
     password: '123456',

@@ -37,7 +37,7 @@ export const mealUpdateSchema = z
     if (data.date_time) {
       obj.date_time = data.date_time.toISOString()
     }
-    if (data.is_planned) {
+    if (data.is_planned != null) {
       obj.is_planned = data.is_planned
     }
 
